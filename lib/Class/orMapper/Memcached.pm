@@ -6,7 +6,7 @@ use Cache::Memcached::Fast;
 use Data::Dumper;
 use base qw/Class::orMapper/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -30,7 +30,7 @@ our $VERSION = '0.01';
  my $memcached = {
  	servers => [qw/localhost:11211/],
  };
- my $db = new Class::orMapper($read_database, $write_database, $memcached);
+ my $db = new Class::orMapper::Memcached($read_database, $write_database, $memcached);
 
 =head1 DESCRIPTION
 
@@ -44,8 +44,8 @@ This Module is easy database operation module with memcached.
  ex.) my $sql = "select * from test where hoge=?";
       my $value = [qw/abc/];
 
- my $data = $db->select_arrayref($param);
- my $data = $db->select_hashref($param);
+ my $data = $db->select_arrayref_c($param);
+ my $data = $db->select_hashref_c($param);
  
  ex.)
  $param = {
