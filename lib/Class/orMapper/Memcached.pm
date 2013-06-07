@@ -3,10 +3,10 @@ use strict;
 use warnings;
 use String::CRC32;
 use Cache::Memcached::Fast;
-use Data::Dumper;
+#use Data::Dumper;
 use base qw/Class::orMapper/;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 NAME
 
